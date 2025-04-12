@@ -6,7 +6,7 @@ const Sidebar = () => {
     const [abrirsidebar, setAbrirsidebar] = useState(true);
 
     return (
-        <div className="app-container">
+        <div className="nav">
             <div className={`sidebar ${abrirsidebar ? "open" : "closed"}`}>
                 <button className="toggle-button" onClick={() => setAbrirsidebar(!abrirsidebar)}>
                     {abrirsidebar ? "←" : "→"}
@@ -33,10 +33,6 @@ const Sidebar = () => {
                         subItems={["Financeiro", "Vendas", "Estoque"]}
                     />
                 </ul>
-            </div>
-            <div className="main-content">
-                <h1>Conteúdo Principal</h1>
-                <p>Aqui fica o conteúdo da página.</p>
             </div>
         </div>
     );
