@@ -14,7 +14,7 @@ const Sidebar = () => {
                 <ul className="menu">
                     <SidebarItem
                         titulo="Caixa"
-                        subItems={["Vendas", "Abrir caixa", "Fechar caixa", "Histórico"]}
+                        subItems={["Vendas", "Abrircaixa", "Fechar caixa"]}
                     />
                     <SidebarItem
                         titulo="Cliente"

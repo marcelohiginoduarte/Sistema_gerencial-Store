@@ -1,27 +1,55 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Sidebar_items.css";
 
-const SidebarItem = ({ titulo, subItems = [] }) => {
-    const [aberto, setAberto] = useState(false);
+const SidebarItem = ({ titulo, subItems }) => {
+    const [open, setOpen] = useState(false);
 
-    const existeItems = subItems.length > 0;
+    const links = {
+        "Vendas": "/vendas",
+        "Abrircaixa": "/caixa",
+        "Fechar caixa": "/fechar-caixa",
+        "Histórico": "/caixa/historico",
+        "Cadastrar": "/cliente/cadastrar",
+        "Listar": "/cliente/listar",
+        "Registrar troca": "/trocas/registrar",
+        "Histórico de trocas": "/trocas/historico",
+        "Produtos": "/estoque/produtos",
+        "Entradas": "/estoque/entradas",
+        "Saídas": "/estoque/saidas",
+        "Alertas": "/estoque/alertas",
+        "Financeiro": "/relatorios/financeiro",
+        "Estoque": "/relatorios/estoque"
+    };
 
     return (
-        <>
-            <li onClick={() => existeItems && setAberto(!aberto)} className="menu-item">
+        <li className="menu-item" onClick={() => setOpen(!open)}>
+            <div>
                 {titulo}
-                {existeItems && (
-                    <span className="arrow">{aberto ? "▲" : "▼"}</span>
-                )}
-            </li>
-            {existeItems && aberto && (
+            </div>
+            <span className="arrow">{open ? "▼" : "▶"}</span>
+
+            {open && (
                 <ul className="submenu">
                     {subItems.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li key={index}>
+                            {links[item] ? (
+                                <Link
+                                    to={links[item]}
+                                    style={{ color: 'white', textDecoration: 'none' }}
+                                >
+                                    {item}
+                                </Link>
+                            ) : (
+                                item
+                            )}
+                        </li>
                     ))}
                 </ul>
             )}
-        </>
+        </li>
     );
 };
 
 export default SidebarItem;
+

@@ -1,0 +1,51 @@
+.cliente-card {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: Arial, sans-serif;
+
+    border: 2px solid #686fc9;
+}
+
+.cliente-foto {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cliente-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cliente-nome {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.cliente-telefone {
+    color: #6b7280;
+}
+
+.vendas-container {
+    padding: 20px;
+  }
+  
+  .vendas-titulo {
+    text-align: center;
+  }
+  
+  .vendas-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
