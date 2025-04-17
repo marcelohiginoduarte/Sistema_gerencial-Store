@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { FaUserAlt } from "react-icons/fa";
 import "./Cliente_venda.css";
 
 function Cliente_venda() {
   const [isEditing, setIsEditing] = useState(false);
   const [cliente, setCliente] = useState({
+    
     nome: "Nome do Cliente",
     telefone: "(00) 00000-0000",
   });
@@ -18,20 +20,17 @@ function Cliente_venda() {
   };
 
   const handleSave = () => {
-    // Aqui você pode adicionar lógica para salvar os dados alterados
     setIsEditing(false);
   };
 
   return (
     <div className="cliente-card">
-      <img
-        className="cliente-foto"
-        src="https://via.placeholder.com/150"
-        alt="Foto do cliente"
-      />
+      <FaUserAlt className="cliente-foto" size={150} />
+      
       <div>
         {isEditing ? (
           <div>
+            <h4>Pesquisar cliente</h4>
             <input
               type="text"
               name="nome"
@@ -63,3 +62,4 @@ function Cliente_venda() {
 }
 
 export default Cliente_venda;
+
